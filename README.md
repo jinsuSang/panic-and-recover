@@ -10,7 +10,7 @@
   $ ./files.exe /my_directory
   ```
 
-- my_directory 폴더의 내부 파일이나 폴더는 접근 권한을 제한해야 패닉이 발생.
+- my_directory 폴더의 내부 파일이나 폴더는 접근 권한을 제한해야 패닉이 발생합니다
 
 ## panic 을 사용하지 않는 경우
 
