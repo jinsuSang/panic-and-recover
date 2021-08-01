@@ -1,7 +1,16 @@
 # Panic and Recover
 
-- 폴더 이름은 cmd 인자로 받아 사용합니다
-- second 폴더의 내부 파일이나 폴더는 접근 권한을
+- 폴더 이름은 cmd에서 인자로 받아 사용합니다
+
+  ```bash
+  $ go run files.go /my_directory
+  ```
+
+  ```bash
+  $ ./files.exe /my_directory
+  ```
+
+- second 폴더의 내부 파일이나 폴더는 접근 권한을 제한해야 패닉이 발생한다.
 
 ## panic 을 사용하지 않는 경우
 
@@ -185,14 +194,14 @@ func main() {
 func reportPanic(){
     p := recover()
     if p == nil {
-         return
+        return
     }
     err, ok := p.(error)
     if ok {
-    	log.Fatalln(err)
+        log.Fatalln(err)
     } else {
-     // 패닉 값이 에러 타입이 아니면 같은 값으로 다시 패닉을 발생시킨다
-     panic(p)
+        // 패닉 값이 에러 타입이 아니면 같은 값으로 다시 패닉을 발생시킨다
+        panic(p)
     }
 }
 ```
